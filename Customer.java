@@ -26,9 +26,7 @@ public class Customer {
          Rental each = (Rental) rentals.nextElement();
    
          // add frequent renter points
-         frequentRenterPoints++;
-         if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE) &&
-            each.getDaysRented() > 1) frequentRenterPoints++;
+         frequentRenterPoints += each.getFrequentRenterPoints();
    
          // show figures for this rental
          result += "\t" + each.getMovie().getTitle() + "\t" +
@@ -42,6 +40,7 @@ public class Customer {
          " frequent renter points";
       return result;
    }
+   
    
    
    private double amountFor(Rental aRental) {
