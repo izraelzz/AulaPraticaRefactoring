@@ -34,6 +34,10 @@ public class Customer {
    public String getName (){
       return _name;
    }
+
+   public Enumeration<Rental> getRentals() {
+      return _rentals.elements();
+   }
   
    public String statement() {
       Enumeration rentals = _rentals.elements();
@@ -52,6 +56,7 @@ public class Customer {
          " frequent renter points";
       return result;
    }
+   
    
    public double getTotalCharge() {
       double result = 0;
